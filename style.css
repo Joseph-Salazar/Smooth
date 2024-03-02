@@ -4,6 +4,40 @@
     padding: 0;
 }
 
+/* TEST */
+
+.herotest {
+    height: 100vh;
+}
+
+.herotest .my-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 2rem;
+    padding: 0 2rem;
+}
+
+.herotest .herotest-headline h1 {
+    font-size: 10rem;
+    line-height: 1;
+}
+
+.hero-information {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100% ;
+}
+
+.hero-cta {
+    display: flex;
+    gap: 1rem;
+}
+
 img {
     display: block;
     max-width: 100%;
@@ -28,7 +62,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .portfolio-imgc img {
     border-radius: 10px;
-    transform: scale(0.9);
+    transform: scale(1);
     transition: transform 0.5s ease;
     
 }
@@ -55,7 +89,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #img1 {
-    background: linear-gradient(to bottom right, #1c211c 0%, #ddc38a 100%) !important;
+    background: linear-gradient(to bottom right, #1e211c 0%, #ddc38a 100%) !important;
 }
 
 #img2 {
@@ -79,13 +113,145 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 1em;
 }
 
+/* SWIPER */
+
+.testimonials {
+    overflow: hidden;
+}
+
+.testimonials h2 {
+    font-size: 10rem;
+    text-wrap: nowrap;
+}
+
+
+.swiper-item {
+    background-color: #fff;
+    padding: 2rem;
+    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    color: var(--background);
+    position: relative;
+    font-size: 1rem;
+    height: 100%;
+    color: #000
+}
+
+.quote {
+    position: absolute;
+    right: 2rem;
+    top: 4rem;
+    color: var(--accent-quote);
+    z-index: 0 !important;
+    width: 150px;
+    height: 150px;
+}
+
+.swiper-item * + *   {
+    z-index: 10;
+}
+
+.testimonial-tags {
+    display: flex;
+    gap: 1rem;
+}
+
+.testimonial-tags div {
+    padding: 0.5rem 1.2rem;
+    border: 1px solid var(--accent);
+    border-radius: 5000px;
+}
+
+.testimonial-client {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-top: 1px solid var(--secondary-type);
+    margin-top: auto;
+}
+
+.client-image-container {
+    width: 50px;
+    height: 50px;
+}
+
+.client-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+
+.container-s {
+    max-width: 90rem;
+    margin-inline: auto;
+    padding-inline: 1rem;
+}
+
+.mySwiper {
+    width: 100%;
+    max-width: 400px;
+    height: 60vh;
+}
+
+.testimonials-section {
+    
+    position: relative;
+}
+
+.testimonials-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    place-items: center;
+    min-height: 100vh;
+    background-color: #000;
+    color: #fff;
+}
+
+.testimonials-title {
+    width: 100%;
+}
+
+.testimonials-title h2 {
+    font-size: clamp(2rem, 16vw - 5rem, 5rem);
+    text-wrap: balance;
+}
+
+.testimonial-tag {
+    font-size: 1rem;
+    border: 1px solid #ccc !important;
+}
+
+.testimonial-description p {
+    font-size: 1.5rem;
+}
+
+.testimonial-client {
+    border-top: 1px solid #ccc !important;
+}
+
+.client-info p {
+    
+    font-size: 1rem;
+}
+
+/* END SWIPER */
+
 
 .white-curtain {
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
-    left: 0;
+    right: 0;
     background-color: #fff;
 }
 
@@ -435,14 +601,32 @@ input, textarea {
     padding: 0;
 }
 
+.quote {
+    position: absolute;
+    right: 2rem;
+    top: 4rem;
+    color: var(--accent-quote);
+    z-index: 0 !important;
+    width: 150px;
+    height: 150px;
+}
+
+.quote img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
 .contact__input_type, textarea {
     padding: 1rem 0.5rem;
     margin: 0.5rem 0;
     border-radius: 5px;
+    border: 1px solid #ccc;
+
 }
 
 .contact__input_type:focus, textarea:focus {
-    border: 1px solid #cacaca44
+    border: 1px solid #adff2f
 }
 
 button {
@@ -737,6 +921,18 @@ a {
     overflow: hidden;
   }
 
+  .parallax-container::before {
+    bottom: 0;
+    left: 0;
+    transform: rotate(180deg);
+    height: 120px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+    position: absolute;
+    z-index: 999999;
+    content: "";
+    width: 100%;
+}
+
 .parallax-container .plximg {
     width: 100%;
     position: absolute;
@@ -792,7 +988,7 @@ a {
 
 
 @media screen and (max-width:768px) {
-    .description, .portfolio__projects, .talents, .help, .purpose-grid1, .purpose-grid2, .contact_grid {
+    .description, .portfolio__projects, .talents, .help, .purpose-grid1, .purpose-grid2, .contact_grid, .testimonials-wrapper {
         grid-template-columns: 1fr;
     }
 
@@ -837,5 +1033,9 @@ a {
         padding-inline: 0;
         padding-block: 2rem;
         gap: 1rem;
+    }
+
+    .mySwiper {
+        max-width: 350px;
     }
 }
